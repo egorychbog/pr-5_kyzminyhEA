@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device=width, initial-scale=1.0">
+    <title>Todo Manager</title>
+    <link href = "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnks.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <style>
+        body{
+            font-family: 'inter', system-ui, sans-serif;
+        }
+        .task-completed {
+            text-decoration: line-through;
+            opacity: 0.6;
+        }
+        .filter-btn.active {
+            background-color: #10b981;
+            color: white;
+            box-shadow: 0 0 0 3px rgba(16,185,129,0.25);
+        }
+    </style>
+</head>
+<body class = "bg-zinc-950 min-h-screen py-10 text-zinc-200">
+    <div class="max-w-2x1 mx-auto bg-zinc-900 rounded-3x1 shadow-2x1 overflow-hidden border border-zinc-800">
+        <div class="bg-black text-white p-8">
+            <h1 class = "text-4x1 font-bold tracking-tigher">Todo Manager</h1>
+        </div>
+        <div class="p-8">
+            <form id="taskForm" class="flex gap-3 mb-8">
+                <input type="text" id="taskInput"
+                    class="flex-1 bg-zinc-800 border border-zinc-700 rounded-2x1 px-6 py-4 focus:outline-none focus:border-emerald-500 text-lg placeholder-zinc-500"
+                    placeholder="Что нужно сделать?" required>
+                <select id="prioritySelect"
+                    class="bg-zinc-800 border border-zinc-700 rounded-2x1 px-4 py-4 text-zinc-300 focus:ouline-none focus:border-emerald-500">
+                    <option value="low">Low</option>
+                    <option value="medium" selected>Medium</option>
+                    <option value="high">High</option>
+                </select>
+
+                <button type="submit"
+                    class="bg-emerald-600 hover:bg-emerald-500 px-10 rounded-2x1 text-white font-medium transition-all active:scale-95">
+                    Добавить             
+                </button>
+            </form>
+            
+            <div class="flex gap-2 mb-6" id="filters">
+                <button data-filter="all"
+                    class="filter-btn active px-6 py-3 rounded-2x1 text-sm font-meduim">Все</button>
+                <button data-filter="active"
+                    class="filter-btn px-6 py-3 rounded-2x1 text-sm font-medium">Активные</button>
+                <button data-filter="completed"
+                    class="filter-btn px-6 py-3 rounded-2x1 text-sm font-medium">Выполненные</button>
+            </div>
+            <ul id="taskList" class="space-y-3 min-h-[320px]"></ul>
+            <div class="mt-10 flex justify-between items-center text-sm">
+                <span id="stats" class="text-zinc-500 font-medium">0 задач</span>
+                
+                <div class="flex gap=4">
+                    <button id="loadSamples"
+                    class = "text-emerald-400 hover:text-emerald-300 font-meduim flex items-center gap-2 transition">
+                    <i class="fas fa-cloud-download-alt"></i> Загрузить с сервер
+                    </button>
+                    <button id="clearCompleted" class="text-red-400 hover:text-red-500 font-medium transition">
+                    Очистить выполненные
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script type="module" src="js/main.js"></script>
+</body>
+    
+</html>
