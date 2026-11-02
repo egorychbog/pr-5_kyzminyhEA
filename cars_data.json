@@ -1,0 +1,22 @@
+[
+    {
+        "timestamp": "2026-11-02T17:35:38.377704+07:00",
+        "make": [
+            {
+                "name": "HONDA",
+                "country": null
+            }
+        ],
+        "vehicle_characteristics": {
+            "Make": "HONDA",
+            "Model": "Accord",
+            "ModelYear": "2003",
+            "VehicleType": "PASSENGER CAR",
+            "BodyClass": "Coupe",
+            "EngineCylinders": "6",
+            "DisplacementL": "2.998832712",
+            "FuelTypePrimary": "Gasoline",
+            "TransmissionStyle": "Automatic"
+        }
+    }
+]
